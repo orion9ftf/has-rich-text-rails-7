@@ -1,24 +1,41 @@
-# README
+### has_rich_text
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1.- Create app
 
-Things you may want to cover:
+```shell
+$ rails new app-test
+```
 
-* Ruby version
+2.- Create scaffold
 
-* System dependencies
+```shell
+$ rails g scaffold post title
+```
 
-* Configuration
+3.- Install rich_text
 
-* Database creation
+```shell
+$ rails g action_text:install
+```
 
-* Database initialization
+4.- Migrate
 
-* How to run the test suite
+```shell
+$ rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+5.- Add body in strongs params
 
-* Deployment instructions
+```rb
+def post_params
+  params.require(:post).permit(:title, :body)
+end
+```
 
-* ...
+6.- Add has_rich_text in post model
+
+```rb
+  has_rich_text :body
+```
+
+
