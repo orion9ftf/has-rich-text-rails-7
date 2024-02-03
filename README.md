@@ -38,4 +38,15 @@ end
   has_rich_text :body
 ```
 
+```rb
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.rich_text_area :body %>
+  </div>
+```
 
+7.- Agregar una nueva migración que esté ligada al usuario que escribió el post, que solo pueda ver el post que le pertenece:
+
+```sh
+$ rails g ...
+```

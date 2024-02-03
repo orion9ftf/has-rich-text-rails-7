@@ -11,9 +11,13 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="inputPassword6" class="col-form-label">Title</label>
+    </div>
+    <div class="col-auto">
+      <%= form.text_field :title %>
+    </div>
   </div>
 
   <div>
@@ -21,7 +25,7 @@
     <%= form.rich_text_area :body %>
   </div>  
 
-  <div>
-    <%= form.submit %>
+  <div class="py-2">
+    <%= form.submit "Save!", class: "btn btn-warning" %>
   </div>
 <% end %>
